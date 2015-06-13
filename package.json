@@ -1,0 +1,13 @@
+{
+  "name": "yelpBot",
+  "version": "1.0.0",
+  "description": "slack bot for yelp",
+  "main": "app.js",
+  "author": "deven",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.x.x",
+    "express": "^4.x.x",
+    "yelp": "^0.2.0"
+  }
+}
