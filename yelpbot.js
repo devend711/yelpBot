@@ -18,7 +18,6 @@ searchYelp = function (msg, callback) {
       if (error) {
         // console.log(error);
       } else {
-        // loop through the businesses
         businesses = data.businesses.slice(0, sliceSize-1);
         suggestedBusiness = businesses[Math.floor(Math.random()*businesses.length)];
         callback(suggestedBusiness);
