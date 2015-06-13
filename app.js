@@ -1,7 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var dotenv = require('dotenv');
-dotenv.load(); // load .env vars
 var yelpbot = require('./yelpbot');
  
 var app = express();
