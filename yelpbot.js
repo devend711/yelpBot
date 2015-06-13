@@ -7,7 +7,7 @@ yelp = require("yelp").createClient({
 
 slackToken = process.env.SLACK_TOKEN;
 
-msgRegex = new RegExp(/(.+)\snear\s(.+)/);
+msgRegex = new RegExp(/yelpbot\s(.+)\snear\s(.+)/);
 sliceSize = 5; // max number of yelp results to randomly select from
 
 searchYelp = function (msg, callback) {
