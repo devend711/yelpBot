@@ -33,7 +33,7 @@ searchYelp = function (msg, callback) {
 
 module.exports = function (req, res, next) {
   console.log('Request received!');
-  if(req.body.token != slackToken) return false; // make sure request came from our slack account
+  if(req.body.token != slackToken) return res.status(200).end(); // make sure request came from our slack account
   msgText = req.body.text;
   yelpResult = searchYelp(msgText, function(suggestedBusiness) {
     business = suggestedBusiness;
