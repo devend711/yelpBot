@@ -16,7 +16,7 @@ searchYelp = function (msg, callback) {
     array = msg.match(msgRegex); // parse the message
     yelp.search({term: array[1], location: array[2]}, function(error, data) {
       if (error) {
-        console.log(error);
+        // console.log(error);
       } else {
         // loop through the businesses
         businesses = data.businesses.slice(0, sliceSize-1);
@@ -26,18 +26,17 @@ searchYelp = function (msg, callback) {
     });
   } 
   catch (e) {
-    console.log(e);
+    // console.log(e);
     callback(null);
   }
 }
 
 module.exports = function (req, res, next) {
-  console.log('Request received!');
+  // console.log('Request received!');
   if(req.body.token != slackToken) return res.status(200).end(); // make sure request came from our slack account
   msgText = req.body.text;
   yelpResult = searchYelp(msgText, function(suggestedBusiness) {
     business = suggestedBusiness;
-    console.log(business);
     if (!business) {
       botPayload = {
         text : "No results for '" + msgText + "'...format searches like 'Pizza near Boston'"
